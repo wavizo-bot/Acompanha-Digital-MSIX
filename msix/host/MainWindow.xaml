@@ -4,7 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.microsoft.com/openapi/2021/mc"
-    xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
     mc:Ignorable="d"
     Title="Acompanha Digital"
     Width="1280"
@@ -13,6 +12,6 @@
     MinHeight="640">
 
     <Grid>
-        <wv2:WebView2 x:Name="webView" />
+        <WebView2 x:Name="webView" />
     </Grid>
 </Window>

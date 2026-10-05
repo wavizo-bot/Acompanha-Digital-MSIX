@@ -13,14 +13,17 @@ public sealed partial class MainWindow : Window
 
     private async void InitializeWebView()
     {
-        await webView.EnsureCoreWebView2Async(null);
+        await webView.EnsureCoreWebView2Async();
         webView.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
         webView.CoreWebView2.Settings.AreDevToolsEnabled = false;
         webView.CoreWebView2.Settings.IsStatusBarEnabled = false;
         webView.CoreWebView2.Settings.IsZoomControlEnabled = false;
-        
-        // Navigate to local PWA files
-        var localPath = System.IO.Path.Combine(AppContext.BaseDirectory, "www", "index.html");
-        webView.CoreWebView2.Navigate($"file:///{localPath.Replace("\\", "/")}");
+
+        // Serve arquivos locais via host virtual https:// (necessario p/ IndexedDB + Service Worker).
+        var wwwRoot = System.IO.Path.Combine(AppContext.BaseDirectory, "www");
+        webView.CoreWebView2.SetVirtualHostNameToFolderMapping(
+            "app.acompanha.local", wwwRoot,
+            Microsoft.Web.WebView2.Core.CoreWebView2HostResourceAccessKind.Allow);
+        webView.CoreWebView2.Navigate("https://app.acompanha.local/index.html");
     }
 }
