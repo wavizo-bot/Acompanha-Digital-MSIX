@@ -1,0 +1,4 @@
+{
+  "version": "acs-digital-v15-miab-etiquetas",
+  "notes": "MIAB agora conta também as etiquetas que você aplicou no morador na tela FILTROS; as etiquetas aplicadas passam a sobreviver à reimportação da base. Versão 1.0.11."
+}

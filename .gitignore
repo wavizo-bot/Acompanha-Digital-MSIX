@@ -1,0 +1,12 @@
+node_modules/
+android/
+*.log
+*.zip
+*.bak
+*.user
+*.suo
+AppPackages/
+*.appx
+*.appxbundle
+*.msix
+*.msixbundle
