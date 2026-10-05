@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" 
-         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
-         xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" 
-         xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
          xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-         IgnorableNamespaces="uap uap3 uap4 rescap">
-  <Identity Name="wavizo.AcompanhaDigital" 
-            Publisher="CN=57BB464E-553F-45B6-A4ED-B253157408EB" 
-            Version="1.0.11.0" 
+         IgnorableNamespaces="uap rescap">
+  <Identity Name="wavizo.AcompanhaDigital"
+            Publisher="CN=57BB464E-553F-45B6-A4ED-B253157408EB"
+            Version="1.0.11.0"
             ProcessorArchitecture="x64" />
   <Properties>
     <DisplayName>Acompanha Digital</DisplayName>
@@ -15,41 +13,28 @@
     <Logo>assets\StoreLogo.png</Logo>
     <Description>Organizador offline para Agentes Comunitários de Saúde. Cadastro de moradores, visitas domiciliares, guias, agendamentos e calendário — tudo offline, sem anúncios e sem cadastro.</Description>
   </Properties>
-  <Dependencies>
-    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.22621.0" />
-  </Dependencies>
   <Resources>
     <Resource Language="pt-BR" />
   </Resources>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.26100.0" />
+  </Dependencies>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+    <Capability Name="internetClient" />
+  </Capabilities>
   <Applications>
-    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Windows.FullTrustApplication">
-      <uap:VisualElements DisplayName="Acompanha Digital" 
-                          Square150x150Logo="assets\Square150x150Logo.png" 
-                          Square44x44Logo="assets\Square44x44Logo.png" 
-                          Description="Organizador offline para Agentes Comunitários de Saúde" 
-                          BackgroundColor="#0066b3" 
-                          Square71x71Logo="assets\Square71x71Logo.png" 
-                          Wide310x150Logo="assets\Wide310x150Logo.png" 
-                          Square310x310Logo="assets\Square310x310Logo.png">
-        <uap:DefaultTile Wide310x150Logo="assets\Wide310x150Logo.png" Square310x310Logo="assets\Square310x310Logo.png" Square71x71Logo="assets\Square71x71Logo.png" Square150x150Logo="assets\Square150x150Logo.png" Square44x44Logo="assets\Square44x44Logo.png" />
+    <Application Id="App" Executable="AcompanhaDigital.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="Acompanha Digital"
+                          Description="Organizador offline para Agentes Comunitários de Saúde"
+                          BackgroundColor="#0066b3"
+                          Square150x150Logo="assets\Square150x150Logo.png"
+                          Square44x44Logo="assets\Square44x44Logo.png">
+        <uap:DefaultTile ShortName="Acompanha Digital"
+                         Wide310x150Logo="assets\Wide310x150Logo.png"
+                         Square310x310Logo="assets\Square310x310Logo.png" />
         <uap:SplashScreen Image="assets\SplashScreen.png" BackgroundColor="#0066b3" />
       </uap:VisualElements>
-      <Extensions>
-        <uap3:Extension Category="windows.protocol">
-          <uap3:Protocol Name="https">
-            <uap3:DisplayName>Acompanha Digital</uap3:DisplayName>
-          </uap3:Protocol>
-        </uap3:Extension>
-        <uap3:Extension Category="windows.protocol">
-          <uap3:Protocol Name="http">
-            <uap3:DisplayName>Acompanha Digital</uap3:DisplayName>
-          </uap3:Protocol>
-        </uap3:Extension>
-      </Extensions>
     </Application>
   </Applications>
-  <Capabilities>
-    <Capability Name="internetClient" />
-    <rescap:Capability Name="runFullTrust" />
-  </Capabilities>
 </Package>

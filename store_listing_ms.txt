@@ -1,0 +1,121 @@
+# ========================================================================
+# TEXTOS DA LISTAGEM DA MICROSOFT STORE — Acompanha Digital (MSIX)
+# Copie daqui para os campos do Partner Center (ID 9NM4GZ6VH86N).
+# Identidade: wavizo.AcompanhaDigital | PublisherDisplayName: wavizo
+# ========================================================================
+
+------------------------------------------------------------------------
+NOME DO APLICATIVO (máx. 50 caracteres) — validado
+------------------------------------------------------------------------
+
+Acompanha Digital                      (20 caracteres)
+
+------------------------------------------------------------------------
+RESUMO / SUMMARY (máx. 200 caracteres) — validado
+------------------------------------------------------------------------
+
+Organize cadastros, visitas, guias e agendamentos do ACS: 100% offline, sem
+anúncios e sem cadastro. Os dados ficam só no seu computador.
+
+------------------------------------------------------------------------
+DESCRIÇÃO (máx. 10.000 caracteres)
+------------------------------------------------------------------------
+
+Acompanha Digital é o organizador de campo do Agente Comunitário de Saúde
+para Windows. Tudo funciona offline, sem anúncios e sem criar conta: os
+dados ficam gravados apenas no seu computador.
+
+RECURSOS
+
+• Cadastro de moradores
+Fichas por cartão cidadão, CPF e CNS, com endereço, dados da família e
+condições de saúde marcadas com filtros coloridos.
+
+• Residências
+Endereços da área com quem mora em cada um, filtros por rua e contagem de
+moradores por casa.
+
+• Visitas domiciliares
+Registro completo com ícones de status: visita realizada ou não, gestante,
+criança, atenção e acompanhamento. Relatório imprimível da rota.
+
+• Avisos e acompanhamento
+Pendências automáticas (visita atrasada, filtro vencido, exame e consulta),
+buscador óptico para ler guias por foto, guias de exames com situação de
+devolução e agendamentos de consultas na unidade.
+
+• Calendário
+Aniversários, exames e consultas em um só lugar.
+
+• Definir área
+Marque as ruas da sua área de atuação; cadastros fora da área são excluídos
+do aparelho para manter a base limpa.
+
+• Exportar e importar
+Backup completo em JSON, no próprio computador — exporte, guarde e restaure
+quando quiser. Arquivos de versões anteriores (ACS Digital) são reconhecidos
+e convertidos automaticamente.
+
+PRIVACIDADE EM PRIMEIRO LUGAR
+
+Todos os dados — inclusive informações de saúde dos moradores que você
+cadastra — ficam gravados APENAS no seu computador (IndexedDB local do
+WebView2). Nada é enviado a servidores: não existe login, analytics,
+rastreadores ou anúncios. O aplicativo não acessa microfone, localização ou
+contatos.
+
+SEM COBRANÇAS
+
+Uso gratuito, sem assinaturas e sem compras dentro do aplicativo.
+
+Política de privacidade (pública):
+https://wavizo-bot.github.io/Acompanha-Digital-MSIX/politica-privacidade.html
+
+Dúvidas sobre o aplicativo ou privacidade: mmr05@hotmail.com
+
+------------------------------------------------------------------------
+O QUE HÁ DE NOVO / WHAT'S NEW (máx. 1.500 caracteres)
+------------------------------------------------------------------------
+
+Versão 1.0.11
+
+• Pacote Microsoft Store (MSIX) assinado, identidade wavizo.AcompanhaDigital.
+• Exibição local via WebView2 com host virtual (IndexedDB e Service Worker
+  funcionando dentro do pacote).
+• Retrocompatibilidade: backups de versões anteriores (ACS Digital) são
+  reconhecidos e convertidos para o formato atual.
+• MIAB: etiquetas aplicadas ao morador agora aparecem na tela FILTROS e
+  sobrevivem à reimportação da base.
+• Correções de exibição e melhoria de desempenho.
+
+------------------------------------------------------------------------
+CAMPOS SUGERIDOS NO PARTNER CENTER
+------------------------------------------------------------------------
+
+Categoria: Produtividade (Productivity) ou Ferramentas (Tools)
+Subcategoria: Utilitários / Estilo de vida: Saúde e bem-estar (opcional)
+Preço: Grátis
+Idiomas do pacote: Português (Brasil) — pt-BR
+Classificação etária: Responder "Não" às perguntas de conteúdo
+Classificação IARC/ESRB: Livre (app de produtividade/ferramenta profissional)
+URL da política de privacidade:
+  https://wavizo-bot.github.io/Acompanha-Digital-MSIX/politica-privacidade.html
+URL do suporte / e-mail de contato: mmr05@hotmail.com
+Gráfico de destaque (opcional): 1024x500.jpg
+Capturas de tela (obrigatório, mín. 1): msix/dist/screenshots/*.png
+  (6 telas 1366x768: menu, moradores, visitas, residências,
+   acompanhamento e avisos)
+
+Respostas de certificação (questionário de aceite do produto):
+  usar justificativa.txt (runFullTrust, internetClient, OCR embutido,
+  IndexedDB local, WebView2).
+
+------------------------------------------------------------------------
+INSTALAÇÃO LOCAL PARA TESTE (sideload)
+------------------------------------------------------------------------
+
+Add-AppxPackage -Path "msix\dist\wavizo.AcompanhaDigital_1.0.11.0_x64.msix"
+
+Remover depois do teste:
+
+Get-AppxPackage wavizo.AcompanhaDigital | Remove-AppxPackage

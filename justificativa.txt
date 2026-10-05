@@ -1,0 +1,26 @@
+Justificativas Microsoft Partner Center — Acompanha Digital (wavizo.AcompanhaDigital):
+
+1. runFullTrust: o host Win32 com WebView2 serve o aplicativo web embutido
+   (www/) via host virtual https://app.acompanha.local, necessário para
+   IndexedDB, Service Worker e WASM do OCR funcionarem offline.
+
+2. internetClient: exigida pelo WebView2 no Windows para renderizar o
+   conteúdo local. O aplicativo é 100% offline e não transmite cadastros.
+
+3. OCR WASM/traineddata: modelos de reconhecimento óptico embutidos no
+   pacote (tesseract + por.traineddata) para leitura offline de fotos.
+
+4. IndexedDB/localStorage: dados dos moradores ficam somente no
+   dispositivo; nada é enviado a servidores.
+
+5. WebView2: único motor que fornece ao PWA local as APIs modernas
+   (IndexedDB, Service Workers, WebAssembly) no Windows.
+
+6. Manifesto sem declaração de protocolos: o pacote NÃO declara
+   windows.protocol (http/https/custom). Links externos abrem no
+   navegador padrão do sistema por ação do usuário, sem registro de
+   esquemas reservados.
+
+7. Sem recursos restritos além de runFullTrust (sem acesso a sistema de
+   arquivos externo, microfone, localização ou contatos declarados como
+   capacidade; o app não declara nem usa essas capacidades).
